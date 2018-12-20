@@ -9,7 +9,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.round=0;
+        this.round=1;
     }
 
     public String getName() {
@@ -24,8 +24,8 @@ public class Player {
         return hero;
     }
 
-    public List<String> getQuestions() {
-        return questions;
+    public void getQuestions() {
+        for (String question : questions) System.out.println(question);
     }
 
     public void setName(String name) {
