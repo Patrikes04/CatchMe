@@ -4,11 +4,11 @@ public class Main {
     public static void main(String[] args) {
         List<Player> queue;
         queue = NewGame.choosePlayers();
-        String choose = "default";
+        int choose = 69;
+        int[] controler={0,choose};
         do {
-            Menu.printMenu(queue);
-            choose = Menu.chooseMenu(queue);
-
-        } while (!(choose.equals("99")));
+            Menu.printMenu(queue,controler[0]);
+            controler = Menu.chooseMenu(queue,controler[0]);
+        } while (!(controler[1]==99));
     }
 }

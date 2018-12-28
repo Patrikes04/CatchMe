@@ -35,6 +35,7 @@ public class Player {
     public void setRound(int round) {
         this.round = round;
     }
+    public void addRound(){this.round++;}
 
     public void setHero(String hero) {
         this.hero = hero;
