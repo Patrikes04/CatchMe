@@ -5,11 +5,11 @@ public class Player {
     private String name;
     private int round;
     private String hero;
-    List<String> questions= new ArrayList<String>();
+    List<String> questions = new ArrayList<String>();
 
     public Player(String name) {
         this.name = name;
-        this.round=1;
+        this.round = 1;
     }
 
     public String getName() {
@@ -35,7 +35,10 @@ public class Player {
     public void setRound(int round) {
         this.round = round;
     }
-    public void addRound(){this.round++;}
+
+    public void addRound() {
+        this.round++;
+    }
 
     public void setHero(String hero) {
         this.hero = hero;
@@ -44,7 +47,8 @@ public class Player {
     public void addQuestion(String question) {
         this.questions.add(question);
     }
-    public void removeQuestions(){
+
+    public void removeQuestions() {
         this.questions.clear();
     }
 }
