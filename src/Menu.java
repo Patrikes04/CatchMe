@@ -17,30 +17,39 @@ public class Menu {
                 Scanner scanner1 = new Scanner(System.in);
                 String newQuestion = scanner1.nextLine();
                 queue.get(i).addQuestion(newQuestion);
+                Clear.cleaning();
                 System.out.println("Question added");
                 return controler;
             case 2:
+                Clear.cleaning();
                 System.out.println("Your questions:");
                 queue.get(i).getQuestions();
                 return controler;
             case 3:
+                Clear.cleaning();
                 System.out.println("Congratulation you won, now you can get new hero");
-                queue.get(i).setRound(0);
+                queue.get(i).setRound(1);
                 queue.get(i).removeQuestions();
                 queue.get(i).setHero(scanner.next());
                 return controler;
             case 4:
+                Clear.cleaning();
                 System.out.println("Next Player");
                 queue.get(i).addRound();
+                Clear.cleaning();
                 controler[0]++;
                 if(queue.size()==controler[0]){
                     controler[0]=0;
                 }
                 return controler;
             case 5:
-                System.out.println(queue.get(i).getHero());
+                System.out.println(queue.get(i).getName()+" hero is "+queue.get(i).getHero());
+                System.out.println("Type anything to clear screen");
+                scanner.next();
+                Clear.cleaning();
                 return controler;
             case 99:
+                Clear.cleaning();
                 System.out.println("Ending game");
                 return controler;
             default:

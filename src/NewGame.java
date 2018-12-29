@@ -6,7 +6,19 @@ public class NewGame {
     public static List<Player> choosePlayers(){
         String name;
         Scanner scanner=new Scanner(System.in);
-        int count= scanner.nextInt();
+        boolean countTrue;
+        int count=0;
+        do{
+            try {
+                System.out.println("How many players will play?");
+                Scanner scannerCount = new Scanner(System.in);
+                count= scannerCount.nextInt();
+                countTrue=true;
+            }catch (Exception e){
+                System.out.println("This is not number");
+                countTrue=false;
+            }
+        }while (!countTrue);
         List<Player> queue =new ArrayList<>();
         for(int i=0;i<count;i++) {
             System.out.println(i + 1 + "-Player choose your name");
@@ -15,6 +27,7 @@ public class NewGame {
             System.out.println(queue.get(i).getName() + " time to choose your hero");
             String hero = scanner.next();
             queue.get(i).setHero(hero);
+            Clear.cleaning();
         }
         return queue;
     }
