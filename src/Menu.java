@@ -7,7 +7,6 @@ public class Menu {
         String[] listMenu = {queue.get(i).getName() + " " + queue.get(i).getRound() + " round", "1.Add new question", "2.Get my previous questions", "3.I know who I am", "4.Next player", "5.Name of your hero", "99.End game"};
         for (String option : listMenu) System.out.println(option);
     }
-
     public static int[] chooseMenu(List<Player> queue, int i) {
         Scanner scanner = new Scanner(System.in);
         int choose = scanner.nextInt();
@@ -32,6 +31,8 @@ public class Menu {
                 queue.get(i).setRound(1);
                 queue.get(i).removeQuestions();
                 queue.get(i).setHero(scanner.next());
+                Clear.cleaning();
+                controler[0]++;
                 return controler;
             case 4:
                 Clear.cleaning();
